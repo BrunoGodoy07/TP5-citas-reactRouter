@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import Formulario from '../componentes/Formulario'
-import Listado from '../componentes/Listado'
+import { NavLink } from 'react-router';
 
 export default function Citas() {
 
@@ -27,9 +27,7 @@ export default function Citas() {
         setCitas([...citas, citaConId]);
       };
     
-      const eliminarCita = (id) => {
-        setCitas(citas.filter(c => c.id !== id));
-      };
+      
 
   return (
     <div className="container mt-4">
@@ -39,10 +37,9 @@ export default function Citas() {
           <h5 className="text-start">Formulario</h5>
           <Formulario agregarCita={agregarCita} />
         </div>
-        <div className="one-half column">
-          <h5 className="text-start">Administra tus citas</h5>
-          <Listado cita={citas} eliminar={eliminarCita} />
-        </div>
+      </div>
+      <div className="one-half column">
+            <NavLink to="/AdministrarCitas">Administra tus citas</NavLink>
       </div>
     </div>
   )
