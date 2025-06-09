@@ -39,7 +39,7 @@ export default function Citas() {
         </div>
       </div>
       <div className="one-half column">
-            <NavLink to="/AdministrarCitas">Administra tus citas</NavLink>
+            <NavLink to="/administrar">Administra tus citas</NavLink>
       </div>
     </div>
   )
