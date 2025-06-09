@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
-import Citas from './pages/Citas';
+import Citas from './pages/Citas.jsx';
 import AdministrarCitas from './pages/AdministrarCitas';
 import Navbar from './componentes/Navbar';
 

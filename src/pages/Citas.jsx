@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import Formulario from '../componentes/Formulario'
 import { NavLink } from 'react-router';
+import '../../styles/estiloCita.css';
 
 export default function Citas() {
 
@@ -29,18 +30,16 @@ export default function Citas() {
     
       
 
-  return (
-    <div className="container mt-4">
-      <h1 className="text-start mb-4">Crear mi cita</h1>
-      <div className="row">
-        <div className="one-half column">
-          <h5 className="text-start">Formulario</h5>
-          <Formulario agregarCita={agregarCita} />
-        </div>
+   return (
+    <div className="citas-container">
+      <h1>Crear mi cita</h1>
+      <div className="form-section">
+        <h5>Formulario</h5>
+        <Formulario agregarCita={agregarCita} />
       </div>
-      <div className="one-half column">
-            <NavLink to="/administrar">Administra tus citas</NavLink>
-      </div>
+      <NavLink to="/administrar" className="admin-link">
+        Administra tus citas
+      </NavLink>
     </div>
-  )
+  );
 }

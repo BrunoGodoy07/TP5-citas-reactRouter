@@ -1,0 +1,55 @@
+.administra-citas-container {
+  max-width: 970px;
+  margin: 2.7rem auto 2rem auto;
+  padding: 2.4rem 1.5rem;
+  background: rgba(255,255,255,0.95);
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 38px 0 rgba(164, 69, 178, 0.13), 0 1.5px 6px 0 rgba(0,0,0,0.07);
+  min-height: 400px;
+}
+
+.administra-citas-container h2 {
+  color: #A445B2;
+  font-family: 'Staatliches', cursive;
+  font-size: 2.2rem;
+  letter-spacing: 1.5px;
+  margin-bottom: 2rem;
+  text-align: left;
+  text-shadow: 0 2px 10px rgba(212,24,114,0.10);
+}
+
+/* Grid para mostrar dos columnas de citas */
+.lista-citas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+}
+
+/* Responsive: una columna en mobile */
+@media (max-width: 700px) {
+  .administra-citas-container {
+    max-width: 99vw;
+    padding: 1.1rem 0.3rem;
+  }
+  .lista-citas {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* Tarjeta para mensaje de "No hay citas" */
+.no-citas {
+  background: #fff;
+  border-radius: 1.1rem;
+  box-shadow: 0 2px 10px rgba(212,24,114,0.09);
+  color: #A445B2;
+  text-align: center;
+  font-family: 'Staatliches', cursive;
+  font-size: 1.25rem;
+  padding: 2.5rem 1.3rem;
+  margin: 2.5rem auto;
+  max-width: 420px;
+}

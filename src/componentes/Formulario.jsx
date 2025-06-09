@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Error from './Error';
+import '../../styles/form.css';
 
 export default function Formulario({ agregarCita }) {
   const [formulario, setFormulario] = useState({
@@ -9,7 +10,8 @@ export default function Formulario({ agregarCita }) {
     hora: '',
     sintomas: ''
   });
-  const [error, setError] = useState(null)
+  const [mensaje, setMensaje] = useState(null);
+  const [tipoMensaje, setTipoMensaje] = useState(null);
 
   const handleChange = (e) => {
     setFormulario({
@@ -28,12 +30,14 @@ export default function Formulario({ agregarCita }) {
       !formulario.hora ||
       !formulario.sintomas
     ) {
-      setError("Todos los campos son obligatorios");
+      setMensaje("Hay campos incorrectos. Todos los campos son obligatorios.");
+      setTipoMensaje("error");
       return;
     }
 
     agregarCita(formulario);
-    setError(null);
+    setMensaje("¡Cita creada con éxito!");
+    setTipoMensaje("exito");
 
     setFormulario({
       mascota: '',
@@ -46,7 +50,7 @@ export default function Formulario({ agregarCita }) {
 
   return (
     <>
-      <form onSubmit={validarForm}>
+      <form className="formulario-citas" onSubmit={validarForm}>
         <label>Nombre Mascota</label>
         <input
           type="text"
@@ -97,8 +101,8 @@ export default function Formulario({ agregarCita }) {
           Agregar Cita
         </button>
       </form>
-      
-        {error && <Error mensaje={error} />}
+
+      {mensaje && <Error mensaje={mensaje} tipo={tipoMensaje} />}
     </>
   );
 }
